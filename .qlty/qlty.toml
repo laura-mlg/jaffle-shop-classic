@@ -1,0 +1,33 @@
+config_version = "0"
+
+exclude_patterns = [
+  "**/target/**",
+  "**/.dbt/**",
+]
+
+test_patterns = [
+  "**/tests/**",
+]
+
+[smells]
+mode = "comment"
+
+[[source]]
+name = "default"
+default = true
+
+[[plugin]]
+name = "sqlfluff"
+mode = "comment"
+
+[[plugin]]
+name = "trufflehog"
+mode = "block"
+
+[[plugin]]
+name = "yamllint"
+mode = "comment"
+
+[[plugin]]
+name = "markdownlint"
+mode = "comment"
